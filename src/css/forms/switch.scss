@@ -1,0 +1,135 @@
+
+.form-switch {
+	user-select: none;
+	margin-bottom: $base-space-size;
+
+    input[type=checkbox] {
+		position: absolute;
+        height: 0px;
+        width: 0px;
+		opacity: 0;
+
+		&:focus:not(:checked) + label::before {
+			border-color:$form-check-hover-border-color;
+			box-shadow: 0 0 5px 2px $form-input-focus-shadow-color;
+			background-color: $form-switch-hover-background-color;
+		}
+		&:focus:checked + label::before {
+			border-color:$form-check-hover-border-color;
+			box-shadow: 0 0 5px 2px $form-switch-checked-background-color;
+		}
+    }
+
+    label {
+        position: relative;
+		display: inline-block;
+		color: $form-switch-font-color;
+		font-size: $form-switch-font-size;
+		font-weight: $form-switch-font-weigth;
+        line-height: $form-input-height;
+        padding-left: 50px;
+        margin: 0;
+        cursor: pointer;
+
+        // Elemento móvil
+        &:after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: $form-switch-color;
+            border-radius: 90px;
+            transition: 0.2s;
+            opacity: 1;
+            transform: translate(0, -50%);
+        }
+
+        // Background
+        &:before {
+            position: absolute;
+            content: '';
+            cursor: pointer;
+            top: 50%;
+            left: 0;
+            width: 40px;
+            height: 24px;
+            background: $form-switch-background-color;
+            border-radius: 100px;
+            margin: 0;
+			transform: translateY(-50%);
+			transition: all 0.25s ease-in;
+        }
+    }
+
+	&:hover input:not(:disabled):not(:checked) + label::before { background-color: $form-switch-hover-background-color }
+
+    input:checked + label {
+		color: $form-switch-checked-font-color;
+
+        &:after {
+            opacity: 1;
+			left: calc(40px - 2px);
+			transform: translate(-100%, -50%);			
+        }
+
+        &:before { background: $form-switch-checked-background-color; }
+    }
+
+    input:disabled + label {
+		opacity: 0.35;
+		cursor: not-allowed;
+    }
+
+	&.form-switch-auto-align { margin-top: calc(#{$form-label-font-size} + #{$form-label-margin-bottom} + 2px); }
+
+	&.form-sm,
+	&.form-size-sm {
+
+		label {
+			font-size: $form-input-sm-font-size;
+			line-height: $form-input-sm-height;
+
+			// Elemento móvil
+			&:after {
+				width: 18px;
+				height: 18px;
+				background-size: 13px;				
+			}
+
+			// Background
+			&:before { height: 20px; }
+		}
+
+		&.form-switch-auto-align { margin-top: calc(#{$form-input-sm-font-size} + #{$form-label-margin-bottom} + 4px); }
+	}
+
+	&.form-md,
+	&.form-size-md {
+
+		label {
+			font-size: $form-input-md-font-size;
+			line-height: $form-input-md-height;
+		}
+	}
+
+	&.form-lg,
+	&.form-size-lg {
+
+		label {
+			font-size: $form-input-lg-font-size;
+			line-height: $form-input-lg-height;
+
+			// Elemento móvil
+			&:after {
+				width: 22px;
+				height: 22px;
+				background-size: 16px;
+			}
+
+			// Background
+			&:before { height: 24px; }
+		}
+	}	
+}

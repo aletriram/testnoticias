@@ -1,0 +1,34 @@
+---
+pagination:
+    data: noticias
+    size: 10
+---
+
+{% extends "layouts/default.njk" %}
+
+
+{% block content %}
+
+	<div class="container">
+		<h2>Noticias</h2>
+		<div class="row">
+		{% for noticia in pagination.items %}
+			<div class="col-md-6">
+				<a href="/noticias/{{noticia.descripcion | slug}}"><img src="{{noticia.portada.url}}?w=600&fit=clip&auto=format,compress" alt="{{noticia.portada.alt}}" class="img-responsive"></a>
+				<h3><a href="/noticias/{{noticia.descripcion | slug}}">{{noticia.descripcion}}</a></h3>
+				<p><span>{{noticia.fecha}}</span> {{noticia.entradillaCorta}}</p>
+			</div>
+		{% endfor %}
+		</div>
+
+		<div class="row mt-lg mb-lg">
+			<div class="col-md-12 text-center">
+				{%- for pageEntry in pagination.pages %}
+					<a href="{{ pagination.hrefs[ loop.index0 ] }}" class="btn btn-sm btn-default {% if page.url == pagination.hrefs[ loop.index0 ] %}disabled{% endif %}">{{ loop.index }}</a>
+				{%- endfor %}
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

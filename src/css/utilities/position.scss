@@ -1,0 +1,58 @@
+// Float
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.float-none { float: none !important; }
+
+@each $breakpoint in map-keys($breakpoints) {
+	@include breakpoint($breakpoint) {
+		.float-#{$breakpoint}-left { float: left !important; }
+		.float-#{$breakpoint}-right { float: right !important; }
+		.float-#{$breakpoint}-none { float: none !important; }
+	}
+}
+
+// Position
+.position-static { position: static !important;}
+.position-relative { position: relative !important;}
+.position-absolute { position: absolute !important;}
+.position-fixed { position: fixed !important;}
+
+.fixed-top {
+	position: fixed;
+	top: 0;
+	z-index: 333;
+
+	&-left {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 333;		
+	}
+
+	&-right {
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 333;			
+	}
+}
+
+.fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	z-index: 333;
+
+	&-left {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 333;		
+	}
+
+	&-right {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 333;			
+	}	
+}

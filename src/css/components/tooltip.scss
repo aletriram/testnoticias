@@ -1,0 +1,136 @@
+
+[data-tooltip] {
+    position: relative;
+	// cursor: help;
+
+    &:after {
+        position: absolute;
+        font-size: $tooltip-font-size;
+        border-radius: .4rem;
+        content: attr(data-tooltip);
+        padding: .8rem;
+        color: $tooltip-dark-font-color;
+        background-color: $tooltip-dark-background-color;
+        box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+		border: 1px solid $tooltip-dark-border-color;
+        line-height: 1.25rem;
+        text-align: left;
+        z-index: 1;
+        pointer-events: none;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%, 10px);
+        white-space: pre;
+        width: auto;
+    }
+
+    &:after {
+        opacity: 0;
+    }
+
+	&[data-tooltip-theme="light"]:after {
+		background-color: $tooltip-light-background-color;
+		color: $tooltip-light-font-color;
+		border: 1px solid $tooltip-light-border-color;
+	}
+
+	&[data-tooltip-theme="dark"]:after {
+		background-color: $tooltip-dark-background-color;
+		color: $tooltip-dark-font-color;
+		border: 1px solid $tooltip-dark-border-color;
+	}
+
+    &:hover {
+        overflow: visible;
+        &:after {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -10px);
+        }
+    }
+
+    /* ===[Tooltip Down]=== */
+    &.tooltip--bottom, &[data-tooltip-pos="bottom"] {
+        &:after {
+            bottom: auto;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -10px);
+        }
+        &:hover {
+            &:after {
+                transform: translate(-50%, 10px);
+            }
+        }
+    }
+
+    /* ===[Tooltip Left]=== */
+    &.tooltip--left, &[data-tooltip-pos="left"] {
+        &:after {
+            bottom: auto;
+            left: auto;
+            top: 50%;
+            right: 100%;
+            transform: translate(10px, -50%);
+        }
+        &:hover {
+            &:after {
+                transform: translate(-10px, -50%);
+            }
+        }
+    }
+
+    /* ===[Tooltip Right]=== */
+    &.tooltip--right, &[data-tooltip-pos="right"] {
+        &:after {
+            bottom: auto;
+            top: 50%;
+            left: 100%;
+            transform: translate(-10px, -50%);
+        }
+        &:hover {
+            &:after {
+                transform: translate(10px, -50%);
+            }
+        }
+    }
+
+    /* ===[Length of tooltip]=== */
+    &[data-tooltip-length="small"]:after, &.tooltip-length--small:after {
+        white-space: normal;
+        width: $tooltip-length-small;
+    }
+
+    &[data-tooltip-length="medium"]:after, &.tooltip-length--medium:after {
+        white-space: normal;
+        width: $tooltip-length-medium;
+    }
+
+    &[data-tooltip-length="large"]:after, &.tooltip-length--large:after {
+        white-space: normal;
+        width: $tooltip-length-large;
+    }
+
+    &[data-tooltip-length="fit"]:after, &.tooltip-length--fit:after {
+        white-space: normal;
+        width: 100%;
+    }
+
+    /* ===[Alignment of tooltip]=== */
+    &[data-tooltip-align="right"]:after, &.tooltip-align--right:after {
+        text-align: right;
+    }
+
+    &[data-tooltip-align="center"]:after, &.tooltip-align--center:after {
+        text-align: center;
+    }
+}
+
+[data-tooltip=""]:after {
+    visibility: hidden !important;
+}

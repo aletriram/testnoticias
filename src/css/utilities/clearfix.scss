@@ -1,0 +1,9 @@
+// Clearfix
+// Easily clear floats by adding .clearfix to the parent element.
+.clearfix {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}

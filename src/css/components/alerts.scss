@@ -1,0 +1,67 @@
+
+.alert {
+	position: relative;
+	padding: $alert-padding-y $alert-padding-x;
+	margin-bottom: $alert-margin-bottom;
+	border: $alert-border-width solid transparent;
+	border-left: 6px solid transparent;
+	border-radius: $alert-border-radius;
+	line-height: 1.5;
+	overflow: hidden;
+	
+
+	* { margin-top: 0px; }
+	hr { margin-bottom: $base-space-size; }
+
+	&.hide {
+		pointer-events: none;
+		animation-name: fade;
+    	animation-duration: 0.8s;
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+		height: auto;
+	}
+
+	100% {
+		opacity: 0;
+		// height: 0;
+		// max-height: 0px;
+		// margin-bottom: 0;
+	}
+}
+
+.alert-dismissible {
+	padding-right: $alert-padding-x * 1.5;
+
+	.alert-close {
+		position: absolute;
+		display: block;
+		top: $alert-padding-y / 2;
+		right: $alert-padding-y / 2;
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+		line-height: 1;
+		opacity: 0.8;
+		cursor: pointer;
+
+		&:hover { opacity: 1; }
+	}
+}
+
+@each $color, $value in $colors {
+
+	.alert-#{$color} {
+		border-color: lighten($value, 10%);
+		background-color: lighten($value, 35%);
+		color: darken($value, 35%);
+		
+		* { color: darken($value, 35%) !important; }
+		hr { background-color: lighten($value, 20%); }
+	}
+}

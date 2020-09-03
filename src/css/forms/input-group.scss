@@ -1,0 +1,135 @@
+.form-input {
+
+
+
+	.valid {}
+	.invalid {}
+
+	.input-group {
+		display: flex;
+		
+		input {
+
+			&:not(:first-child):not(:last-child) {
+				border-left: none;
+				border-right: none;
+				border-radius: 0;
+			}
+
+			&:first-child:last-child {
+				border-radius: $form-input-border-radius;
+				border: $form-input-border-width solid $form-input-border-color;
+			}
+
+			&:first-child {
+				border-right: none;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;	
+			}
+
+			&:last-child {
+				border-left: none;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;	
+			}		
+		}
+
+		.text {
+			font-size: $form-input-font-size;
+			color: $form-input-font-color;
+			background-color: map-get($grayscale, light);
+			line-height: $form-input-height ;
+			height: $form-input-height;
+			padding: 0 $form-input-padding-x / $font-scale-factor;
+			border-radius: $form-input-border-radius;
+			border: $form-input-border-width solid $form-input-border-color;
+			white-space: nowrap;
+
+			[class^="icons-"]:before,
+			[class*=" icons-"]:before { 
+				font-size: 1.15em; 
+			}
+
+			+ .text,
+			+ .btn, + .button {
+				border-left: none;
+			}
+
+			&:not(:first-child):not(:last-child) {
+				border-radius: 0;
+			}
+
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;	
+			}
+
+			&:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;	
+			}	
+		}	
+
+		.icon {
+
+		}			
+
+		.btn,
+		.button {
+
+			+ .text,
+			+ .btn, + .button {
+				border-left: none;
+			}			
+
+			&:not(:first-child):not(:last-child) {
+				border-radius: 0;
+			}
+
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;	
+			}
+
+			&:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;	
+			}	
+		}
+	}
+
+
+	&.form-sm .input-group,
+	&.form-size-sm .input-group {
+
+		.text {
+			font-size: 1em / $font-scale-factor;
+			height: round($form-input-height / $font-scale-factor); 	
+			line-height: round($form-input-height / $font-scale-factor) ;
+		}
+
+		.btn,
+		.button {
+			font-size: 1em / $font-scale-factor;
+			height: round($form-input-height / $font-scale-factor); 	
+			line-height: 1;
+		}
+	}
+
+	&.form-lg .input-group,
+	&.form-size-lg .input-group {
+
+		.text {
+			font-size: 1em * $font-scale-factor;
+			height: round($form-input-height * $font-scale-factor); 	
+			line-height: round($form-input-height * $font-scale-factor) ;
+		}
+
+		.btn,
+		.button {
+			font-size: 1em * $font-scale-factor;
+			height: round($form-input-height * $font-scale-factor); 	
+			line-height: 1;
+		}
+	}		
+}

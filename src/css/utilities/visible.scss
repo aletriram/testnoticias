@@ -1,0 +1,15 @@
+
+.hidden { display: none !important; }
+
+@each $break, $value in $breakpoints {
+	
+	@include breakpoint($break) {
+		.visible-#{$break} { display: block !important; }
+		.visible-#{$break}-block { display: block !important; }
+		.visible-#{$break}-inline { display: inline !important; }
+		.visible-#{$break}-inline-block { display: inline-block !important; }
+		.visible-#{$break}-flex { display: flex !important; }
+		.visible-#{$break}-inline-flex { display: inline-flex !important; }			
+		.hidden-#{$break} { display: none !important; }
+	}
+}

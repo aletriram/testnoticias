@@ -1,0 +1,20 @@
+// Margins
+
+.margin-none { margin: 0 !important; }
+.padding-none { padding: 0 !important; }
+
+@include margins();
+@include margins('x');
+@include margins('y');
+@include margins('t', '-top');
+@include margins('b', '-bottom');
+@include margins('l', '-left');
+@include margins('r', '-right');
+
+@include paddings();
+@include paddings('x');
+@include paddings('y');
+@include paddings('t', '-top');
+@include paddings('b', '-bottom');
+@include paddings('l', '-left');
+@include paddings('r', '-right');

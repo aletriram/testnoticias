@@ -1,0 +1,90 @@
+
+.display {
+	color: $text-display-color;
+	font-size: $text-display-font-size;
+	line-height: $text-display-line-height;
+	font-family: $text-display-font-family;
+	margin-top: $text-display-margin-top;
+	margin-bottom: $text-display-margin-bottom;
+	text-transform: $text-display-text-transform;
+
+	@include breakpoint-down(sm) {
+		font-size: $text-display-font-size-mobile;
+		line-height: $text-display-line-height-mobile;		
+	}		
+}
+
+h1, .h1 {
+	color: $text-h1-color;
+	font-size: $text-h1-font-size;
+	line-height: $text-h1-line-height;
+	font-family: $text-h1-font-family;
+	margin-top: $text-h1-margin-top;
+	margin-bottom: $text-h1-margin-bottom;
+	text-transform: $text-h1-text-transform;	
+
+	@include breakpoint-down(sm) {
+		font-size: $text-h1-font-size-mobile;
+		line-height: $text-h1-line-height-mobile;		
+	}
+}
+
+h2, .h2 {
+	color: $text-h2-color;
+	font-size: $text-h2-font-size;
+	line-height: $text-h2-line-height;
+	font-family: $text-h2-font-family;
+	margin-top: $text-h2-margin-top;
+	margin-bottom: $text-h2-margin-bottom;
+	text-transform: $text-h2-text-transform;
+
+	@include breakpoint-down(sm) {
+		font-size: $text-h2-font-size-mobile;
+		line-height: $text-h2-line-height-mobile;		
+	}	
+}
+
+h3, .h3 {
+	color: $text-h3-color;
+	font-size: $text-h3-font-size;
+	line-height: $text-h3-line-height;
+	font-family: $text-h3-font-family;
+	margin-top: $text-h3-margin-top;
+	margin-bottom: $text-h3-margin-bottom;
+	text-transform: $text-h3-text-transform;
+
+	@include breakpoint-down(sm) {
+		font-size: $text-h3-font-size-mobile;
+		line-height: $text-h3-line-height-mobile;		
+	}	
+}
+
+h4, .h4 {
+	color: $text-h4-color;
+	font-size: $text-h4-font-size;
+	line-height: $text-h4-line-height;
+	font-family: $text-h4-font-family;
+	margin-top: $text-h4-margin-top;
+	margin-bottom: $text-h4-margin-bottom;
+	text-transform: $text-h4-text-transform;
+}
+
+h5, .h5 {
+	color: $text-h5-color;
+	font-size: $text-h5-font-size;
+	line-height: $text-h5-line-height;
+	font-family: $text-h5-font-family;
+	margin-top: $text-h5-margin-top;
+	margin-bottom: $text-h5-margin-bottom;
+	text-transform: $text-h5-text-transform;
+}
+
+h6, .h6 {
+	color: $text-h6-color;
+	font-size: $text-h6-font-size;
+	line-height: $text-h6-line-height;
+	font-family: $text-h6-font-family;
+	margin-top: $text-h6-margin-top;
+	margin-bottom: $text-h6-margin-bottom;
+	text-transform: $text-h6-text-transform;
+}

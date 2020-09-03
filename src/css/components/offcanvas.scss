@@ -1,0 +1,124 @@
+
+
+.offcanvas {
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	width: $offcanvas-width;
+	height: 100%;
+	max-height: 100%;
+	overflow-y: scroll;
+	background: $offcanvas-background-color;
+	padding: $offcanvas-padding;
+	z-index: $offcanvas-zindex + 10;
+	transition-property: transform, bottom, top, right, left, opacity, visibility;
+	transition-duration: .4s;
+	transition-timing-function: ease-in-out;
+
+	&.offcanvas-modal-faded {
+		transition: transform none;
+		width: auto;
+		height: 100%;
+		visibility: hidden;
+		opacity: 0;
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
+
+	&.offcanvas-slide-right,
+	&.offcanvas-push-right {
+		max-width: 100%;
+		right: 0;
+		left: auto;
+		transform: translateX(100%);
+		visibility: hidden;
+
+		&.show { 
+			transform: translateX(0);
+			visibility: visible;
+		}
+	}
+
+	&.offcanvas-slide-left,
+	&.offcanvas-push-left {
+		max-width: 100%;
+		right: auto;
+		left: 0;
+		transform: translateX(-100%);
+		visibility: hidden;
+
+		&.show {
+			transform: translateX(0);
+			visibility: visible;
+		}
+	}
+
+	&.offcanvas-slide-top,
+	&.offcanvas-push-top {
+		width: 100%;
+		height: $offcanvas-height;
+		max-height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: auto;
+		transform: translateY(-100%);
+		visibility: hidden;
+
+		&.show {
+			visibility: visible;
+			transform: translateY(0%);
+		}
+	}
+
+	&.offcanvas-slide-bottom,
+	&.offcanvas-push-bottom {
+		width: 100%;
+		height: $offcanvas-height;
+		max-height: 100%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: auto;
+		bottom: 0;
+		transform: translateY(100%);
+		visibility: hidden;
+
+		&.show {
+			visibility: visible;
+			transform: translateY(0%);
+		}
+	}
+}
+
+.offcanvas-wrap {
+	height: 100%;
+	width: 100%;
+	transition-property: transform, bottom, top, right, left;
+	transition-duration: .4s;
+	transition-timing-function: ease-in-out;
+}
+
+.offcanvas-backdrop {
+	position: fixed;
+	content: "";
+	display: block;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $offcanvas-backdrop-background-color;
+	z-index: $offcanvas-zindex - 1;
+	animation-name: backdrop;
+    animation-duration: 0.4s;
+}
+
+@keyframes backdrop {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}

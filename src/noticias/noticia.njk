@@ -1,0 +1,41 @@
+---
+pagination:
+    data: noticias
+    size: 1
+    alias: noticia
+permalink: "noticias/{{ noticia.descripcion | slug }}/"
+---
+
+{% extends "layouts/default.njk" %}
+
+
+{% block content %}
+
+
+	<div class="container">
+		<h2>noticias</h2>
+		<a href="{{noticia.permaLink}}"><img src="{{noticia.foto.url}}?w=600&fit=clip&auto=format,compress" alt="{{noticia.foto.alt}}"></a>
+		<h1>{{noticia.descripcion}}</h1>
+		<p>{{noticia.fecha}}</p>
+		<p>{{noticia.entradilla}}</p>
+
+		{{noticia.texto | safe}}
+
+		<div class="row">
+			{% for foto in noticia.galeria %}
+				<div class="col-md-3">
+					<img src="{{foto.url}}?w=600&fit=clip&auto=format,compress" alt="{{foto.alt}}" class="img-responsive">
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row mt-lg mb-lg">
+			<div class="col-md-6">
+				<a href="{{ pagination.href.previous }}" class="btn btn-primary {% if not pagination.href.previous %}disabled{% endif %}">Siguiente</a>
+			</div>
+			<div class="col-md-6 text-right">
+				<a href="{{ pagination.href.next }}" class="btn btn-primary {% if not pagination.href.next %}disabled{% endif %}">Anterior</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

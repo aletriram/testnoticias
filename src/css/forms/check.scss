@@ -1,0 +1,142 @@
+
+.form-check {
+	user-select: none;
+	margin-bottom: $base-space-size;
+
+    input[type=checkbox] {
+        height: 0px;
+        width: 0px;
+		opacity: 0;
+
+		&:focus + label::before {
+			border-color:$form-check-hover-border-color;
+			box-shadow: 0 0 0 2px $form-input-focus-shadow-color;
+		}
+    }
+
+    label {
+        position: relative;
+		display: inline-block;
+		color: $form-check-font-color;
+		font-size: $form-check-font-size;
+		font-weight: $form-check-font-weigth;
+        line-height: $form-input-height;
+        padding-left: 30px;
+        margin: 0;
+        cursor: pointer;
+
+        // Icono check
+        &:after {
+            position: absolute;
+			display: block;
+			content: "";
+            top: 50%;
+            left: 0px;
+            width: 20px;
+            height: 20px;
+			transform: translate(-30%, -50%);
+            opacity: 0;
+            transition: 0.2s;
+			background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px'%3E%3Cg id='check' transform='translate(2.000000, 3.000000)' fill='%23#{$form-check-color}' fill-rule='nonzero'%3E%3Cpath d='M15.8987279,2.03362791 L13.9204558,0.101370229 C13.8539908,0.0364728012 13.7637438,0 13.669629,0 C13.5755142,0 13.4852673,0.0364728012 13.4188022,0.101370229 L5.06357832,8.24445616 C4.9971133,8.30935359 4.90686634,8.34582639 4.81275155,8.34582639 C4.71863677,8.34582639 4.62838981,8.30935359 4.56192479,8.24445616 L2.58365264,6.31219848 C2.51718761,6.24730105 2.42694065,6.21082825 2.33282587,6.21082825 C2.23871109,6.21082825 2.14846413,6.24730105 2.0819991,6.31219848 L0.10372695,8.24445616 C-0.0345756499,8.37919658 -0.0345756499,8.59761081 0.10372695,8.73235123 L4.56192479,13.0751004 C4.62838981,13.1399978 4.71863677,13.1764706 4.81275155,13.1764706 C4.90686634,13.1764706 4.9971133,13.1399978 5.06357832,13.0751004 L15.8987279,2.51669233 C16.0337574,2.38252342 16.0337574,2.16779681 15.8987279,2.03362791 Z' id='Path'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 15px;
+        }
+
+        // Background
+        &:before {
+            position: absolute;
+            cursor: pointer;
+            content: '';
+            top: 50%;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: $form-check-background-color;
+			border: 1px solid $form-check-border-color;
+			transform: translateY(-50%);
+			border-radius: $form-check-border-radius;
+            margin: 0;
+			transition: 0.2s;
+        }
+    }
+
+	&:hover input:not(:disabled) + label::before { border-color:$form-check-hover-border-color }
+
+    input:checked + label {
+		color: $form-check-checked-font-color;
+
+        &:after {
+			transform: translate(0%, -50%);
+            opacity: 1;
+        }
+
+        &:before {
+            background: $form-check-checked-background-color;
+			border-color: $form-check-checked-border-color;
+		}
+    }
+
+    input:disabled + label {
+		opacity: 0.35;
+		cursor: not-allowed;
+    }
+
+	&.form-check-auto-align { margin-top: calc(#{$form-label-font-size} + #{$form-label-margin-bottom} + 2px); }
+
+	&.form-sm,
+	&.form-size-sm {
+
+		label {
+			font-size: $form-input-sm-font-size;
+			line-height: $form-input-sm-height;
+
+			// Icono check
+			&:after {
+				width: 18px;
+				height: 18px;
+				background-size: 13px;
+			}
+
+			// Background
+			&:before {
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		&.form-check-auto-align { margin-top: calc(#{$form-input-sm-font-size} + #{$form-label-margin-bottom} + 4px); }
+	}
+
+	&.form-md,
+	&.form-size-md {
+
+		label {
+			font-size: $form-input-md-font-size;
+			line-height: $form-input-md-height;
+		}
+	}
+
+	&.form-lg,
+	&.form-size-lg {
+
+		label {
+			font-size: $form-input-lg-font-size;
+			line-height: $form-input-lg-height;
+
+			// Icono check
+			&:after {
+				width: 22px;
+				height: 22px;
+				background-size: 16px;
+			}
+
+			// Background
+			&:before {
+				width: 22px;
+				height: 22px;
+			}
+		}
+	}	
+}
+

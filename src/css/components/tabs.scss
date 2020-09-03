@@ -1,0 +1,120 @@
+.tabs {
+	display: flex;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid $tabs-border-color;
+}
+
+.tabs-item {
+	flex-grow: 1;
+	padding: $tabs-item-padding-y $tabs-item-padding-x;
+	margin-left: $tabs-item-margin;
+	margin-bottom: -1px;
+
+	color: $tabs-item-font-color;
+	font-size: $tabs-item-font-size;
+	font-weight: $tabs-item-font-weight;
+	text-align: center;
+	text-decoration: none !important;
+	
+	border: 1px solid $tabs-item-border-color;
+	border-bottom: 1px solid $tabs-border-color;
+	background-color: $tabs-item-background-color;
+
+	border-top-left-radius: $tabs-item-border-radius;
+	border-top-right-radius: $tabs-item-border-radius;
+
+
+	&:hover {
+		color: $tabs-item-hover-font-color;
+		border-color: $tabs-item-hover-border-color;
+		border-bottom: 1px solid $tabs-border-color;		
+		background-color: $tabs-item-hover-background-color;
+	}
+
+	&:first-child { margin-left: 0;}
+
+	&.active,
+	&.active:focus {
+		color: $tabs-item-active-font-color !important;
+		font-weight: $tabs-item-active-font-weight;
+		background-color: $tabs-background-color;
+		border: 1px solid $tabs-border-color;
+		border-bottom-color: $tabs-background-color;
+		border-top-left-radius: $tabs-item-border-radius;
+		border-top-right-radius: $tabs-item-border-radius;
+		cursor: default;
+	}
+
+	&:focus {
+		color: $tabs-item-font-color !important;
+		outline: none;
+	}
+}
+
+.tabs-menu {
+	position: absolute;
+	display: none;
+	width: auto;
+	top: 0px;
+	right: 0px;
+
+	.dropdown-toggle {
+		display: block;
+		padding: $tabs-item-padding-y 10px;
+		color: $tabs-item-font-color;
+		font-size: $tabs-item-font-size;
+		font-weight: $tabs-item-font-weight;
+		text-align: center;
+	}
+}
+
+
+@include breakpoint(xs) {
+
+	.tabs-menu { display: block; }
+
+	.tabs { flex-direction: column; }
+	
+	.tabs-item:not(.active) {
+		border: none;
+		min-width: 50%;
+		width: 100%;
+		right: 1px;
+		margin: 0;
+		border-radius: 0;
+		display: none;
+	}
+
+	.tabs-item.active {
+		order: -1;
+		margin-left: 0;
+		margin-right: 40px;
+	}
+}
+
+.tabs-content {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 1em;
+	border: 1px solid $tabs-border-color;
+	border-top: none;
+	transition: all 2s ease-in;
+	min-height: 0px;
+	border-bottom-left-radius: $tabs-item-border-radius;
+	border-bottom-right-radius: $tabs-item-border-radius;	
+	background: $tabs-background-color;
+}
+
+.tabs-panel {
+	position: absolute;
+	padding: 2em;
+	opacity: 0;
+
+	&.show {
+		transition: opacity 0.3s ease-in;
+		position: inherit;
+		opacity: 1;
+	}
+}

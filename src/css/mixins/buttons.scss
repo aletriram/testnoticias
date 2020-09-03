@@ -1,0 +1,32 @@
+@mixin make-button-variant(
+	$font-color,
+	$background-color,
+	$border-color,
+	$hover-font-color: $font-color,
+	$hover-background-color: $background-color,
+	$hover-border-color: $border-color,
+	$active-font-color: $font-color,
+	$active-background-color: $background-color,
+	$active-border-color: $border-color,
+	$focus-color: $background-color
+	) {
+
+	color: $font-color;
+	background-color: $background-color;
+	border-color: $border-color;
+
+	&:not([disabled]):not(.disabled):hover {
+		color: $hover-font-color;
+		background-color: $hover-background-color;
+		border-color: $hover-border-color;
+	}
+
+	&:focus { box-shadow: 0 0 0 2px $focus-color; }
+
+	&:not([disabled]):not(.disabled):active,
+  	&:not([disabled]):not(.disabled).active	{
+		color: $active-font-color;
+		background-color: $active-background-color;
+		border-color: $active-border-color;
+	}
+}

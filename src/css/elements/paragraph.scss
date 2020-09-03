@@ -1,0 +1,118 @@
+
+p {
+	color: $text-paragraph-color;
+	font-size: $text-paragraph-font-size;
+	line-height: $text-paragraph-line-height;
+	font-family: $text-paragraph-font-family;
+	margin-top: $text-paragraph-margin-top;
+	margin-bottom: $text-paragraph-margin-bottom;
+	text-transform: $text-paragraph-text-transform;
+
+	@include breakpoint-down(sm) {
+		font-size: $text-paragraph-font-size-mobile;
+		line-height: $text-paragraph-line-height-mobile;		
+	}	
+}
+
+// Variantes de estilos de texto
+small,
+.small {
+	font-size: 0.75em;
+}
+
+sub,
+sup {
+    font-size: x-small;
+	line-height: 0;
+	margin-left: 1em/4;
+	position: relative;
+}
+
+sup {
+	top: 0;
+}
+
+sub {
+	bottom: 1px;
+}
+
+mark, 
+.mark {
+	$mark-colors: (
+		blue: #5BC0EB,
+		yellow: #FDE74C,
+		green: #9BC53D,
+		orange: #FA7921,
+		pink: #EF4880
+	);
+
+	background-color: map-get( $mark-colors, yellow);
+	@include color-contrast(map-get($mark-colors, yellow));
+}
+
+del {}
+
+s {}
+
+ins {}
+
+// Separador horizontal
+hr {
+    border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	margin-top: -1px;
+
+	&.alt1 {
+		border-bottom: 2px dashed rgba(0, 0, 0, .1);
+		margin-top: -2px;
+	}
+
+	&.alt2 {
+		border: 0;
+	    height: 1px;
+	    background-image: -webkit-linear-gradient(left, #f0f0f0, #999, #f0f0f0);
+	    background-image: -moz-linear-gradient(left, #f0f0f0, #999, #f0f0f0);
+	    background-image: -ms-linear-gradient(left, #f0f0f0, #999, #f0f0f0);
+	    background-image: -o-linear-gradient(left, #f0f0f0, #999, #f0f0f0);
+	}
+}
+
+
+// Estilos de texto predefinidos
+pre, code, samp, var, kbd {
+	font-family: Consolas, Monaco, 'Courier New', monospace;
+}
+
+code {
+	background: map-get($grayscale, bright);
+	color: var(--text-color);
+	padding: 2px 5px;
+	border-radius: 4px;
+}
+
+pre {
+    padding: 15px;
+	border-radius: 4px;
+}
+
+pre,
+pre code {
+    background: map-get($grayscale, light);
+	padding: 0;
+	top: 0;
+    display: block;
+    line-height: 1.2;
+    color: var(--text-color);
+	overflow: none;
+	white-space: pre-wrap;
+}
+
+abbr {
+	text-decoration: underline;
+	text-decoration: underline dotted;
+	cursor: help;
+	border-bottom: 0;
+}
+
+
+

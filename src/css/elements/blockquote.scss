@@ -1,0 +1,29 @@
+
+blockquote {
+	color: $text-blockquote-color;
+	margin-left: $base-space-size;
+	padding-top: $base-space-size * 1.5;
+	padding-bottom: $base-space-size * 1.5;
+	padding-left: $base-space-size * 2.5;
+	margin-top: $base-space-size * 3;
+	margin-bottom: $base-space-size * 3;
+	border-left: 4px solid $text-blockquote-border-color;
+	font-family: $text-blockquote-font-family;
+	font-size: $text-blockquote-font-size;
+	line-height: $text-blockquote-line-height;
+	font-style: $text-blockquote-font-style;
+
+	& p {
+    	margin-top: .5rem;
+		margin-bottom: 0;
+	}
+
+	@include breakpoint(xs) {
+		margin-left: 0;
+		padding-top: $base-space-size * 1;
+		padding-bottom: $base-space-size * 1;
+		padding-left: $base-space-size * 2;	
+		margin-top: $base-space-size * 2;
+		margin-bottom: $base-space-size * 2;		
+	}
+}

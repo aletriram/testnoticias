@@ -1,0 +1,35 @@
+ul, ol {
+	color: $text-paragraph-color;
+	font-family: $text-paragraph-font-family;
+	padding-left: $base-space-size * 2.5;
+	margin-bottom: $base-space-size * 2;
+
+	li {
+		margin-bottom: $base-space-size;
+		line-height: $text-paragraph-line-height;
+	}
+
+	& ol,
+	& ul {
+		margin-top: $base-space-size * 1.5;
+		margin-bottom: $base-space-size * 1.5;
+	}
+
+	@include breakpoint(xs) {
+		padding-left: $base-space-size * 1.5;
+		margin-bottom: $base-space-size * 1.5;
+
+		& ol,
+		& ul {
+			padding-left: $base-space-size * 1.5;
+		}		
+	}
+}
+
+ol ol li {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol li {
+	list-style-type: lower-roman;
+}

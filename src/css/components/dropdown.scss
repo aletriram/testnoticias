@@ -1,0 +1,92 @@
+.dropdown { position: relative; }
+
+.dropdown-toggle {}
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	float: left;
+	width: 100%;
+	min-width: 200px;
+	z-index: 100;
+	float: left;
+	padding: $dropdown-menu-padding-y 0;
+	margin: $dropdown-menu-margin-top 0 0 0; // override default ul
+	background-color: $dropdown-menu-background-color;
+	background-clip: padding-box;
+	border: 1px solid $dropdown-menu-border-color;
+	border-radius: $dropdown-menu-border-radius;
+	box-shadow: $dropdown-menu-box-shadow;
+
+	&.active { display: inline-block; }
+
+	&.dropdown-menu-left {
+		width: auto;
+		float: left;
+		left: 0;
+	}
+
+	&.dropdown-menu-right {
+		width: auto;
+		float: right;
+		left: auto;
+		right: 0;
+	}
+}
+
+.dropdown-item {
+	width: 100%;
+	clear: both;
+	list-style: none;
+	text-align: left; 
+	margin: 0;
+	border: 0;
+
+	a {
+		display: block;
+		white-space: nowrap;
+		padding: $dropdown-menu-item-padding-y $dropdown-menu-item-padding-x;
+		color: $dropdown-menu-item-font-color;
+		font-size: $dropdown-menu-item-font-size;
+		font-weight: $dropdown-menu-item-font-weight;
+		text-decoration: $dropdown-menu-item-text-decoration;
+		transition: background 0.15s ease-in;
+
+		&:hover, &:active, &:focus, &:visited {
+			background: $dropdown-menu-item-hover-background-color !important;
+			color: $dropdown-menu-item-hover-font-color !important;
+			text-decoration: $dropdown-menu-item-hover-text-decoration !important;
+			font-weight: $dropdown-menu-item-hover-font-weight !important;
+		}
+	}	
+
+	&.active {
+
+		a {
+			background: $dropdown-menu-item-hover-background-color !important;
+			color: $dropdown-menu-item-hover-font-color !important;
+			text-decoration: $dropdown-menu-item-hover-text-decoration !important;
+			font-weight: $dropdown-menu-item-hover-font-weight !important;
+		}
+	}
+
+	&.disabled {
+
+		a {
+			color: $dropdown-menu-item-disabled-font-color !important;
+			pointer-events: none;
+		}	
+	}
+}
+
+
+.dropdown-divider {
+	list-style: none;
+	margin: 0;
+	border: 0;
+	padding-top: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid $dropdown-menu-border-color;
+}	

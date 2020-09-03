@@ -1,0 +1,100 @@
+
+// Referencias y ayuda:
+// -------------------------------------------
+// Colorinspo: Educate people about color
+// https://colorsinspo.com
+// -------------------------------------------
+// Calculate colors.
+// https://calcolor.co
+// -------------------------------------------
+// Google, but for colors
+// https://picular.co
+// -------------------------------------------
+// The super fast color schemes generator!
+// https://coolors.co
+// -------------------------------------------
+// Adobe Color CC
+// https://color.adobe.com
+// -------------------------------------------
+// ColorBox
+// https://www.colorbox.io
+// -------------------------------------------
+// Colormind
+// http://colormind.io
+// -------------------------------------------
+
+:root {
+	--primary-dk: #{$color-primary-dk};
+	--primary-md: #{$color-primary-md};
+	--primary: #{$color-primary};
+	--primary-lt: #{$color-primary-lt};
+	--primary-br: #{$color-primary-br};
+
+	--secondary-dk: #{$color-secondary-dk};
+	--secondary-md: #{$color-secondary-md};
+	--secondary: #{$color-secondary};
+	--secondary-lt: #{$color-secondary-lt};
+	--secondary-br: #{$color-secondary-br};
+
+	--custom-1: #{$color-custom-1};
+	--custom-2: #{$color-custom-2};
+	--custom-3: #{$color-custom-3};
+	--custom-4: #{$color-custom-4};
+
+	--success: #{$color-success};
+	--warning: #{$color-warning};
+	--danger: #{$color-danger};
+	--info: #{$color-info};
+
+	--black: #{$color-black};
+	--dark: #{$color-dark};
+	--midtone: #{$color-midtone};
+	--gray: #{$color-gray};
+	--light: #{$color-light};
+	--bright: #{$color-bright};
+	--white: #{$color-white};
+
+	--text-color: #{$text-color};
+	--text-header-color: #{$text-header-color};
+}
+
+$colors: (
+	// Primary Color
+	primary-dk: $color-primary-dk,
+	primary-md: $color-primary-md,
+	primary: $color-primary,
+	primary-lt: $color-primary-lt,
+	primary-br: $color-primary-br,
+	// Secondary Color
+	secondary-dk: $color-secondary-dk,
+	secondary-md: $color-secondary-md,
+	secondary: $color-secondary,
+	secondary-lt: $color-secondary-lt,
+	secondary-br: $color-secondary-br,
+	// Custom colors
+	custom-1: $color-custom-1,
+	custom-2: $color-custom-2,
+	custom-3: $color-custom-3,
+	custom-4: $color-custom-4,
+	// System Colors
+	success: $color-success,
+	warning: $color-warning,
+	danger: $color-danger,
+	info: $color-info
+);
+
+$grayscale: (
+	black: $color-black,
+	dark: $color-dark,
+	midtone: $color-midtone,
+	gray: $color-gray,
+	light: $color-light,
+	bright: $color-bright,
+	white: $color-white
+);
+
+// Generación de helpers classes:
+// .text-color, .bg-color y .border-color
+
+@include colors($colors);
+@include colors($grayscale);

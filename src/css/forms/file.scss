@@ -1,0 +1,135 @@
+.form-file {
+	width: 100%;
+	position: relative;
+	margin-bottom: $base-space-size;
+
+	input {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;		
+
+		&:focus + .form-file-placeholder {
+			outline: 0px;
+			box-shadow: 0 0 0 2px $form-input-focus-shadow-color;
+			background-color: $form-input-focus-background-color;
+			border-color: $form-input-focus-border-color !important;
+			z-index: 100; // Mantiene el box-shadow sobre el resto de elementos
+
+			&::after { border-color: $form-input-border-color !important; }
+		}	
+
+		&:disabled + .form-file-placeholder {
+			opacity: 0.35;
+			background-color: $form-input-disabled-background-color;
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+	}
+
+	.form-file-placeholder {
+		cursor: pointer;
+		display: block;
+		width: 100%;
+
+		position: relative;
+		user-select: none;
+
+		color: $form-input-placeholder-color;
+		font-size: $form-input-font-size;
+		line-height: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;		
+		white-space: nowrap;
+		
+		background-color: $form-input-background-color;		
+		
+		height: $form-input-height;
+		padding: $form-input-padding-y $form-input-padding-x;
+		padding-right: 33%;
+		
+		border-radius: $form-input-border-radius;
+		border: $form-input-border-width solid $form-input-border-color;		
+		background-clip: padding-box;
+
+		transition: $form-input-transition;	
+
+		&.form-file-placeholder-active { color: $form-input-font-color; }
+
+		&::after {
+			position: absolute;
+			content: attr(data-button-label);
+			top: 0;
+			right: 0;
+			width: auto;
+			height: 100%;
+			display: block;
+			color: $form-file-button-font-color;
+			background-color: $form-file-button-background-color;
+			padding: $form-input-padding-y $form-input-padding-x;
+			border-left: $form-input-border-width solid $form-input-border-color;		
+			transition: $form-input-transition;
+			z-index: 100;
+		}
+
+		&:hover {
+			border-color: $form-input-hover-border-color;
+
+			&::after {
+				color: $form-file-button-hover-font-color;
+				background: $form-file-button-hover-background-color;
+				border-left: $form-input-border-width solid $form-input-hover-border-color;
+			}
+		}
+	}
+
+	small {
+		display: inline-block;
+		color: $form-input-help-font-color;
+		font-size: $form-input-help-font-size;
+		margin-top: $base-space-size / 3;
+		line-height: 1;
+	}
+
+	// Sizes
+
+	&.form-sm,
+	&.form-size-sm {
+		
+		.form-file-placeholder {
+			font-size: $form-input-sm-font-size;
+			height: $form-input-sm-height;
+			padding: $form-input-sm-padding-y $form-input-padding-x;	
+			padding-right: 33%;
+
+			&::after { padding: $form-input-sm-padding-y $form-input-padding-x; }				
+		}
+	}
+
+	&.form-md,
+	&.form-size-md {
+		
+		.form-file-placeholder {
+			font-size: $form-input-md-font-size;
+			height: $form-input-md-height;
+			padding: $form-input-md-padding-y $form-input-padding-x;	
+			padding-right: 33%;	
+
+			&::after { padding: $form-input-md-padding-y $form-input-padding-x; }	
+		}
+	}
+
+	&.form-lg,
+	&.form-size-lg {
+		
+		.form-file-placeholder {
+			font-size: $form-input-lg-font-size;
+			height: $form-input-lg-height;
+			padding: $form-input-lg-padding-y $form-input-padding-x;	
+			padding-right: 33%;
+
+			&::after { padding: $form-input-lg-padding-y $form-input-padding-x; }		
+		}
+	}
+}
+
+

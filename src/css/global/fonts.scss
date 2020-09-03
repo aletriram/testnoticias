@@ -1,0 +1,29 @@
+
+// Google Fonts
+// https://fonts.google.com
+
+// Type Scale Resources
+// http://type-scale.com
+// https://www.gridlover.net/try
+// Ver vídeo: https://youtu.be/dkpuahY9bl4?t=15m23s
+// https://www.modularscale.com
+
+// Helps for pairs Google Fonts together
+// https://fontpair.co
+
+// Webfont generator
+// https://www.fontsquirrel.com 
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap');
+
+:root {
+	--font-size-base: #{$font-size-base};
+	--font-family-base: #{$font-family-base};
+	--font-family-sans-serif: #{$font-family-sans-serif};
+	--font-family-serif: #{$font-family-serif};
+}
+
+html {
+	font-size: var(--font-size-base);
+	font-family: var(--font-family-base);
+}

@@ -1,0 +1,31 @@
+@mixin colors($colors) {
+
+	@each $color, $value in $colors {
+		// Fixed problem when key name is equal to black o white
+		@if ($color == black) or ($color == white) {
+			.text-#{$color} { color: $value !important; }
+			.bg-#{$color} { background-color: $value !important; }
+			.border-#{$color} { border-color: $value !important; }	
+		}
+		@else {
+			.text-#{$color} { color: var(--#{$color}) !important; }
+			.bg-#{$color} { background-color: var(--#{$color}) !important; }
+			.border-#{$color} { border-color: var(--#{$color}) !important; }
+		}
+	}
+}
+
+@mixin color-contrast($background-color, $bright-color: white, $dark-color: black) {
+	$color-brightness: round((red($background-color) * 299) + (green($background-color) * 587) + (blue($background-color) * 114) / 1000);
+	$light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+	@if abs($color-brightness) < ($light-color/2){
+		color: $bright-color;
+	}
+
+	@else {
+		color: $dark-color;
+	}
+}
+
+

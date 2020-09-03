@@ -1,0 +1,82 @@
+// Grid columns constructor
+
+@mixin make-columns($breakpoint, $columns) {
+
+	.col-#{$breakpoint}-offset-0, 
+	.col-#{$breakpoint}-offset-none {
+		margin-left: 0;
+	}	
+
+	@for $i from 1 through $columns {
+
+		.col-#{$breakpoint}-#{$i} {
+			flex-basis: 100%/($columns / $i) !important;
+			max-width: 100%/($columns / $i);
+		}
+
+		.col-#{$breakpoint}-offset-#{$i} {
+			margin-left: 100%/($columns / $i);
+		}
+
+		@if $breakpoint == "xs" {
+			.col-#{$i} {
+				flex-basis: 100%/($columns / $i) !important;
+				max-width: 100%/($columns / $i);
+			}
+		}
+	}
+}
+
+@mixin grid-column-order($breakpoint) {
+		
+	@include breakpoint($breakpoint) {
+		@for $i from 1 through $grid-total-cols {
+			&.order-#{$breakpoint}-#{$i} { order: #{$i} !important; }
+		}
+		
+		&.order-#{$breakpoint}-last { order: 100 !important; }
+		&.order-#{$breakpoint}-first { order: -1 !important; }
+	}
+}
+
+
+// Custom Grid Child
+
+@mixin custom-grid-child($cols-xs: 1, $cols-sm: 2, $cols-md: 3, $cols-lg: 3, $child-item: div) {
+	box-sizing: border-box;
+	display: -ms-flexbox;
+	display: box;
+	display: flex;
+	-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+	.#{$child-item} {
+		box-sizing: border-box;
+		flex-basis: 100%/$cols-xs !important;
+		max-width: 100%/$cols-xs;
+	}
+
+	@include breakpoint-up(sm) {
+		.#{$child-item} {
+			box-sizing: border-box;
+			flex-basis: 100%/$cols-sm !important;
+			max-width: 100%/$cols-sm;
+		}
+	}
+
+	@include breakpoint-up(md) {
+		.#{$child-item} {
+			box-sizing: border-box;
+			flex-basis: 100%/$cols-md !important;
+			max-width: 100%/$cols-md;
+		}
+	}
+
+	@include breakpoint-up(lg) {
+		.#{$child-item} {
+			box-sizing: border-box;
+			flex-basis: 100%/$cols-lg !important;
+			max-width: 100%/$cols-lg;
+		}
+	}
+}

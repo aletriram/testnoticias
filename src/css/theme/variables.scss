@@ -1,0 +1,748 @@
+// =========================================================
+//   BREACKPOINTS
+// 
+// - Breakpoints para las diferentes resoluciones
+// 
+// =========================================================
+
+// Breakpoints para las diferentes resoluciones
+$media-xs: 767px;
+$media-sm: 768px;
+$media-md: 992px;
+$media-lg: 1200px;
+
+$breakpoints: (
+	xs: $media-xs,
+	sm: $media-sm,
+	md: $media-md,
+	lg: $media-lg
+);
+
+// =========================================================
+//   SPACING
+// 
+// - Espacio base utilizado para cálculos de spacings
+// 
+// =========================================================
+
+// Tamaño de espacio base utilizado para margenes y padding
+$space-size-xxs: 2px;
+$space-size-xs: 5px;
+$space-size-sm: 10px;
+$space-size-md: 15px;
+$space-size-lg: 20px;
+$space-size-xl: 30px;
+$space-size-xxl: 50px;
+$space-size-xxxl: 80px;
+$space-size-xxxxl: 130px;
+
+$base-space-size: $space-size-md;
+
+// =========================================================
+//   COLOR
+// 
+// - Color primario
+// - Color secundario
+// - Colores personalizados
+// - Color para avisos de sistema
+// - Escala de grises
+// 
+// =========================================================
+
+// Color primario
+$color-primary-dk: #0E5989;
+$color-primary-md: #186CA4;
+$color-primary: #3099DC;
+$color-primary-lt: #6EB6E9;
+$color-primary-br: #93CBF1;
+
+// Color secundario
+$color-secondary-dk: #5D1B2C;
+$color-secondary-md: #D13B62;
+$color-secondary: #FF4877;
+$color-secondary-lt: #FF8AA8;
+$color-secondary-br: #FFDDE6;
+
+// Colores personalizados
+$color-custom-1: #fc5185;
+$color-custom-2: #364f6b;
+$color-custom-3: #43dde6;
+$color-custom-4: #f0f0f0;
+
+// Colores para avisos de sistema
+$color-success: #61bb46;
+$color-warning: #fdb827;
+$color-danger: #e03a3e;
+$color-info: #3099dc;
+
+// Escala de grises
+$color-black: #000000;
+$color-dark: #555555;
+$color-midtone: #777777;
+$color-gray: #999999;
+$color-light: #dbdbdb;
+$color-bright: #f5f5f5;
+$color-white: #FFFFFF;
+
+
+// =========================================================
+//   FONTS
+// 
+// - Tamaño de fuenta base
+// 
+// =========================================================
+
+// $font-size-base: 16px;
+// $font-scale-factor: 1.33;
+
+$font-family-sans-serif: 'Nunito Sans', sans-serif;
+$font-family-serif: serif;
+
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 16px;
+
+// TODO: Eliminar esta variable
+$font-scale-factor: 1.33;
+
+$font-weight-bolder: 900;
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+$font-weight-thin: 100;
+
+
+// =========================================================
+//   TEXT
+// 
+// - Color texto y encabezados
+// - Párrafos
+// - Enlaces
+// - Display
+// - Encabezados
+// - Listas
+// - Variantes de tamaños estándares
+// 
+// =========================================================
+
+// Colores por defecto para texto y encabezados
+$text-color: $color-dark;
+$text-header-color: $color-black;
+
+// Párrafos
+$text-paragraph-font-size: 16px;
+$text-paragraph-line-height: 24px;
+$text-paragraph-font-size-mobile: 16px;
+$text-paragraph-line-height-mobile: 24px;
+$text-paragraph-font-family: var(--font-family-sans-serif);
+$text-paragraph-color: var(--text-color);
+$text-paragraph-margin-top: 0px;
+$text-paragraph-margin-bottom: $base-space-size;
+$text-paragraph-text-transform: none;
+
+// Enlaces
+$text-link-color: var(--primary);
+$text-link-color-hover: var(--primary);
+$text-link-decoration: underline;
+$text-link-decoration-hover: underline;
+$text-link-font-weight: $font-weight-normal;
+
+// Display
+$text-display-font-size: 56px;
+$text-display-line-height: 60px;
+$text-display-font-size-mobile: 48px;
+$text-display-line-height-mobile: 50px;
+$text-display-font-family: var(--font-family-sans-serif);
+$text-display-color: var(--text-header-color);
+$text-display-margin-top: 0px;
+$text-display-margin-bottom: $base-space-size * 2;
+$text-display-text-transform: none;
+
+// Encabezados
+$text-h1-font-size: 40px;
+$text-h1-line-height: 50px;
+$text-h1-font-size-mobile: 32px;
+$text-h1-line-height-mobile: 40px;
+$text-h1-font-family: var(--font-family-sans-serif);
+$text-h1-color: var(--text-header-color);
+$text-h1-margin-top: $base-space-size * 2;
+$text-h1-margin-bottom: $base-space-size;
+$text-h1-text-transform: none;
+
+$text-h2-font-size: 32px;
+$text-h2-line-height: 40px;
+$text-h2-font-size-mobile: 26px;
+$text-h2-line-height-mobile: 32px;
+$text-h2-font-family: var(--font-family-sans-serif);
+$text-h2-color: var(--text-header-color);
+$text-h2-margin-top: $base-space-size * 2;
+$text-h2-margin-bottom: $base-space-size;
+$text-h2-text-transform: none;
+
+$text-h3-font-size: 24px;
+$text-h3-line-height: 30px;
+$text-h3-font-size-mobile: 22px;
+$text-h3-line-height-mobile: 28px;
+$text-h3-font-family: var(--font-family-sans-serif);
+$text-h3-color: var(--text-header-color);
+$text-h3-margin-top: $base-space-size * 2;
+$text-h3-margin-bottom: $base-space-size;
+$text-h3-text-transform: none;
+
+$text-h4-font-size: 20px;
+$text-h4-line-height: 25px;
+$text-h4-font-family: var(--font-family-sans-serif);
+$text-h4-color: var(--text-header-color);
+$text-h4-margin-top: $base-space-size * 2;
+$text-h4-margin-bottom: $base-space-size;
+$text-h4-text-transform: none;
+
+$text-h5-font-size: 16px;
+$text-h5-line-height: 20px;
+$text-h5-font-family: var(--font-family-sans-serif);
+$text-h5-color: var(--text-header-color);
+$text-h5-margin-top: 0px;
+$text-h5-margin-bottom: $base-space-size;
+$text-h5-text-transform: none;
+
+$text-h6-font-size: 14px;
+$text-h6-line-height: 17.5px;
+$text-h6-font-family: var(--font-family-sans-serif);
+$text-h6-color: var(--text-header-color);
+$text-h6-margin-top: 0px;
+$text-h6-margin-bottom: $base-space-size;
+$text-h6-text-transform: none;
+
+// Listas
+$text-list-margin-bottom: $base-space-size;
+$text-list-padding-left: $base-space-size * 2;
+
+// Blockquote
+$text-blockquote-font-family: $font-family-base;
+$text-blockquote-font-size: $font-size-base * 1.5;
+$text-blockquote-line-height: $font-size-base * 2;
+$text-blockquote-color: var(--black);
+$text-blockquote-border-color: var(--bright);
+$text-blockquote-font-style: italic;
+
+// Variantes de tamaños estándares
+$text-size-xxs:	10px;
+$text-size-xs: 	12px;
+$text-size-sm: 	14px;
+$text-size-md:	16px;
+$text-size-lg: 	20px;
+$text-size-xl: 	24px;
+$text-size-xxl:	32px;
+
+// Variantes de tamaños estándares en mobile
+$text-size-xxs-mobile: 	10px;
+$text-size-xs-mobile: 	12px;
+$text-size-sm-mobile: 	14px;
+$text-size-md-mobile:	16px;
+$text-size-lg-mobile: 	18px;
+$text-size-xl-mobile:	22px;
+$text-size-xxl-mobile: 	26px;
+
+
+// =========================================================
+//   BUTTONS
+// 
+// - Botón por defecto
+// - Tamaños
+// - Primary
+// - Secondary
+// - Link
+// 
+// =========================================================
+
+
+// Botón por defecto (default)
+
+$button-font-size: $font-size-base;
+$button-font-weight: normal;
+$button-font-color: var(--dark);
+$button-font-family: val(--font-family-base);
+
+$button-border-width: 1px;
+$button-border-radius: 4px;
+$button-border-color: var(--bright);
+
+$button-padding-x: $base-space-size * 2;
+$button-padding-y: 10px;
+// TODO: Resolvel sumando variables
+$button-height: 38px; // Suma font-size + padding-y + border-width
+
+$button-background-color: var(--bright);
+
+$button-hover-font-color: $button-font-color;
+$button-hover-background-color: var(--light);
+$button-hover-border-color: $button-hover-background-color;
+
+$button-active-font-color: $button-font-color;
+$button-active-background-color: var(--light);
+$button-active-border-color: var(--light);
+
+$button-focus-color: var(--light);		
+
+$button-text-decoration: none;
+$button-hover-text-decoration: none;
+
+$button-transition: all .25s ease-in;
+
+// Tamaños 
+
+$button-sm-font-size: 14px;
+$button-sm-padding-y: 6px;
+$button-sm-height: 28px;
+
+$button-md-font-size: 18px;
+$button-md-padding-y: 14px;
+$button-md-height: 48px;
+
+$button-lg-font-size: 20px;
+$button-lg-padding-y: 18px;
+$button-lg-height: 58px;
+
+// Primary
+
+$button-primary-font-weight: normal;
+$button-primary-font-color: var(--white);
+
+$button-primary-border-color: var(--primary);
+$button-primary-background-color: var(--primary);
+
+$button-primary-hover-font-color: var(--white);
+$button-primary-hover-background-color: var(--primary-md);
+$button-primary-hover-border-color: var(--primary-md);
+
+$button-primary-active-font-color: var(--white);
+$button-primary-active-background-color: var(--primary-lt);
+$button-primary-active-border-color: var(--primary-lt);
+
+$button-primary-focus-color: var(--primary-br);		
+
+$button-primary-text-decoration: none;
+$button-primary-hover-text-decoration: none;
+
+// Secondary
+
+$button-secondary-font-weight: normal;
+$button-secondary-font-color: var(--white);
+
+$button-secondary-border-color: var(--secondary);
+$button-secondary-background-color: var(--secondary);
+
+$button-secondary-hover-font-color: var(--white);
+$button-secondary-hover-background-color: var(--secondary-md);
+$button-secondary-hover-border-color: var(--secondary-md);
+
+$button-secondary-active-font-color: var(--white);
+$button-secondary-active-background-color: var(--secondary-lt);
+$button-secondary-active-border-color: var(--secondary-lt);
+
+$button-secondary-focus-color: var(--secondary-br);		
+
+$button-secondary-text-decoration: none;
+$button-secondary-hover-text-decoration: none;
+
+// Link
+
+$button-link-font-weight: $text-link-font-weight;
+$button-link-font-color: $text-link-color;
+
+$button-link-border-color: transparent;
+$button-link-background-color: transparent;
+
+$button-link-hover-font-color: $text-link-color-hover;
+$button-link-hover-background-color: transparent;
+$button-link-hover-border-color: transparent;
+
+$button-link-active-font-color: $text-link-color-hover;
+$button-link-active-background-color: transparent;
+$button-link-active-border-color: transparent;
+
+$button-link-focus-color: var(--bright);		
+
+$button-link-text-decoration: $text-link-decoration;
+$button-link-hover-text-decoration: $text-link-decoration-hover;
+
+
+// =========================================================
+//   FORMS
+// 
+// -label
+// -Input
+// -Select
+// -Textarea
+// -Check
+// -Radio
+// -Switch
+// -File
+// -Tamaños sm, md, lg
+// -Read only
+// -Validación (mensajes de error)
+// -Input-group
+// 
+// =========================================================
+
+// Label
+
+$form-label-font-color: var(--dark);
+$form-label-font-size: $font-size-base;
+$form-label-font-weight: bold;
+$form-label-font-family: val(--font-family-base);
+
+// Input
+
+$form-input-padding-x: $base-space-size;
+$form-input-padding-y: 10px;
+$form-input-height: 38px; // Suma font-size + padding-y + border-width
+
+$form-label-margin-bottom: $base-space-size / 2;
+
+$form-input-font-color: var(--black);
+$form-input-font-size: $font-size-base;
+$form-input-background-color: var(--white);
+
+$form-input-placeholder-color: var(--gray);
+
+$form-input-help-font-color: var(--gray);
+$form-input-help-font-size: $font-size-base * 0.8;
+
+$form-input-border-width: 1px;
+$form-input-border-radius: 4px;
+$form-input-border-color: var(--light);
+$form-input-hover-border-color: var(--gray);
+
+$form-input-focus-font-color: var(--black);
+$form-input-focus-border-color: var(--light);
+$form-input-focus-background-color: var(--bright);
+$form-input-focus-shadow-color: var(--light);
+
+$form-input-disabled-background-color: var(--light);
+
+$form-input-readonly-font-color: var(--dark);
+$form-input-readonly-background-color: var(--light);
+$form-input-readonly-focus-font-color: var(--dark);
+$form-input-readonly-focus-border-color: var(--dark);
+$form-input-readonly-focus-background-color: var(--light);
+
+$form-input-transition: all .25s ease-in;
+
+// Select
+
+$form-select-caret-color: "000000";
+
+// Check
+
+$form-check-font-color: $form-label-font-color;
+$form-check-font-size: $form-label-font-size;
+$form-check-font-weigth: normal;
+
+$form-check-color: "333333";
+$form-check-background-color: transparent;
+$form-check-border-color: $form-input-border-color;
+$form-check-border-radius: 4px;
+
+$form-check-hover-border-color: $form-input-hover-border-color;
+
+$form-check-checked-font-color: var(--black);
+$form-check-checked-background-color: var(--bright);
+$form-check-checked-border-color: $form-input-border-color;
+
+// Radio
+
+$form-radio-font-color: $form-label-font-color;
+$form-radio-font-size: $form-label-font-size;
+$form-radio-font-weigth: normal;
+
+$form-radio-color: "000000";
+$form-radio-background-color: transparent;
+$form-radio-border-color: $form-input-border-color;
+$form-radio-border-radius: 4px;
+
+$form-radio-hover-border-color: $form-input-hover-border-color;
+
+$form-radio-checked-font-color: var(--black);
+$form-radio-checked-background-color: var(--bright);
+$form-radio-checked-border-color: $form-input-border-color;
+
+// Switch
+
+$form-switch-font-color: $form-label-font-color;
+$form-switch-font-size: $form-label-font-size;
+$form-switch-font-weigth: normal;
+
+$form-switch-color: #ffffff;
+$form-switch-background-color: var(--light);
+$form-switch-border-radius: 4px;
+
+$form-switch-hover-background-color: var(--gray);
+
+$form-switch-checked-font-color: var(--black);
+$form-switch-checked-background-color: var(--success);
+
+// File
+
+$form-file-button-font-color: $button-font-color;
+$form-file-button-background-color: $button-background-color;
+$form-file-button-hover-font-color: $button-hover-font-color;
+$form-file-button-hover-background-color: $button-hover-background-color;
+
+// Tamaños sm, md y lg
+
+$form-input-sm-font-size: $button-sm-font-size;
+$form-input-sm-padding-y: $button-sm-padding-y;
+$form-input-sm-height: $button-sm-height; // Suma font-size + padding-y + border-width
+
+$form-input-md-font-size: $button-md-font-size;
+$form-input-md-padding-y: $button-md-padding-y;
+$form-input-md-height: $button-md-height; // Suma font-size + padding-y + border-width
+
+$form-input-lg-font-size: $button-lg-font-size;
+$form-input-lg-padding-y: $button-lg-padding-y;
+$form-input-lg-height: $button-lg-height; // Suma font-size + padding-y + border-width
+
+// =========================================================
+//   GRID
+// 
+// - Número de columnas total del Grid
+// - Espacio entre columnas
+// - Tamaños del contenedor según los diferentes $breakpoints
+// 
+// =========================================================
+
+// Número de columnas total del Grid
+$grid-total-cols: 12;
+
+// Espacio entre columnas del Grid
+$grid-column-gutter: 30px;
+
+// Espacio entre columnas para Mobile
+$grid-column-gutter-xs: 15px;
+
+// Tamaños del contenedor según los diferentes $breakpoints
+$grid-container-width-lg: 1140px;
+$grid-container-width-md: 940px;
+$grid-container-width-sm: 720px;
+$grid-container-width-xs: 100%;
+
+// =========================================================
+//   DROPDOWN
+// 
+// =========================================================
+
+$dropdown-menu-background-color: var(--white);
+$dropdown-menu-padding-y: 10px;
+$dropdown-menu-margin-top: 5px;
+$dropdown-menu-border-color: $form-input-border-color;
+$dropdown-menu-border-radius: $form-input-border-radius;
+$dropdown-menu-box-shadow: 0 0 15px 5px rgba($color-gray, 0.2);
+
+$dropdown-menu-item-font-size: $form-input-font-size;
+$dropdown-menu-item-font-color: var(--gray);
+$dropdown-menu-item-font-weight: normal;
+$dropdown-menu-item-text-decoration: none;
+$dropdown-menu-item-padding-x: 15px;
+$dropdown-menu-item-padding-y: $base-space-size / 2;
+
+$dropdown-menu-item-hover-font-color: var(--gray);
+$dropdown-menu-item-hover-font-weight: normal;
+$dropdown-menu-item-hover-background-color: var(--bright);
+$dropdown-menu-item-hover-text-decoration: none;
+
+$dropdown-menu-item-disabled-font-color: var(--light);
+
+
+
+// =========================================================
+//   MODAL
+// 
+// =========================================================
+
+$modal-background-color: rgba(0,0,0,0.70);
+
+$modal-content-background-color: var(--white);
+$modal-content-margin-top: $base-space-size * 2;
+$modal-content-padding: 20px;
+$modal-content-border-color: $form-input-border-color;
+$modal-content-border-radius: 4px;
+$modal-content-width: 640px;
+
+$modal-sm-content-width: 480px;
+$modal-md-content-width: 780px;
+$modal-lg-content-width: 900px;
+
+$modal-header-border-color: $form-input-border-color;
+$modal-header-background-color: var(--white);
+
+$modal-footer-border-color: $form-input-border-color;
+$modal-footer-background-color: var(--white);
+
+$modal-title-font-size: $text-size-lg;
+$modal-title-line-height: 1;
+$modal-title-font-weight: bold;
+$modal-title-font-family: $font-family-base;
+
+$modal-close-color: var(--light);
+$modal-close-hover-color: var(--gray);
+
+
+// =========================================================
+//   SLIDER
+// 
+// =========================================================
+
+$slider-bullet-color: $color-gray;
+$slider-bullet-active-color: $color-midtone;
+
+$slider-navigation-color: $color-gray;
+$slider-navigation-size: 30px;
+
+// =========================================================
+//   OFFCANVAS MENU
+// 
+// =========================================================
+
+$offcanvas-width: 300px;
+$offcanvas-height: auto;
+$offcanvas-background-color: $color-dark;
+$offcanvas-padding: 1.5rem;
+$offcanvas-backdrop-background-color: rgba(#000, 0.4);
+$offcanvas-zindex: 1000;
+
+
+// =========================================================
+//   TABLE
+// 
+// =========================================================
+
+$table-head-background-color: var(--dark);
+$table-head-font-color: var(--white);
+$table-cell-padding: 1em 0.5em;
+$table-cell-background-color: var(--white);
+$table-border-color: var(--light);
+
+
+// =========================================================
+//   TOOLTIP
+// 
+// =========================================================
+
+$tooltip-font-size: $text-size-sm;
+$tooltip-dark-font-color: #fff;
+$tooltip-dark-background-color: rgba(#222222, .8);
+$tooltip-dark-border-color: $tooltip-dark-background-color;
+$tooltip-light-font-color: $text-color;
+$tooltip-light-background-color: rgba(#ffffff, .8);
+$tooltip-light-border-color: var(--light);
+$tooltip-length-small: 80px;
+$tooltip-length-medium: 150px;
+$tooltip-length-large: 260px;
+
+// =========================================================
+//   ALERTS
+// 
+// =========================================================
+
+$alert-padding-y: $base-space-size;
+$alert-padding-x: $base-space-size * 2;
+$alert-margin-bottom: $base-space-size;
+$alert-border-radius: 4px;
+$alert-border-width: 1px;
+
+
+// =========================================================
+//   TABS
+// 
+// =========================================================
+
+$tabs-border-color: var(--light);
+$tabs-background-color: var(--white);
+
+$tabs-item-font-color: var(--gray);
+$tabs-item-font-weight: normal;
+$tabs-item-font-size: $text-size-md;
+$tabs-item-padding-x: 2em;
+$tabs-item-padding-y: 1em;
+$tabs-item-margin: $base-space-size / 2;
+$tabs-item-background-color: var(--bright);
+$tabs-item-border-color: $tabs-item-background-color;
+$tabs-item-border-radius: 4px;
+
+$tabs-item-hover-font-color: var(--dark);
+$tabs-item-hover-background-color: darken($color-bright, 2%);
+$tabs-item-hover-border-color: darken($color-bright, 2%);
+
+$tabs-item-active-font-color: var(--dark);
+$tabs-item-active-font-weight: bold;
+
+
+// =========================================================
+//   NAVBAR
+// 
+// =========================================================
+
+$navbar-height: 65px;
+$navbar-border-radius: 4px;
+$navbar-padding-x: $base-space-size;
+$navbar-background-color: var(--white);
+
+$navbar-item-font-color: var(--black);
+$navbar-item-font-size: 16px;
+$navbar-item-font-weight: normal;
+$navbar-item-text-decoration: none;
+$navbar-item-link-color: $navbar-item-font-color;
+$navbar-item-hover-link-color: var(--white);
+$navbar-item-background-color: transparent;
+$navbar-item-hover-background-color: var(--black);
+$navbar-item-padding-x: 15px;
+
+$navbar-dropdown-menu-padding-y: 10px;
+$navbar-dropdown-menu-font-color: var(--white);
+$navbar-dropdown-menu-font-size: 16px;
+$navbar-dropdown-menu-font-weight: bold;
+$navbar-dropdown-menu-text-decoration: none;
+$navbar-dropdown-menu-background-color: var(--midtone);
+$navbar-dropdown-menu-hover-background-color: var(--dark);
+$navbar-dropdown-menu-item-padding-x: $navbar-item-padding-x * 2;
+$navbar-dropdown-menu-item-padding-y: $base-space-size / 2;
+
+$navbar-responsive-height: 45px;
+$navbar-responsive-background-color: $navbar-background-color;
+$navbar-responsive-menu-background-color: var(--bright);
+$navbar-responsive-menu-padding-y: $base-space-size;
+
+$navbar-responsive-item-font-color: var(--gray);
+$navbar-responsive-item-font-size: 16px;
+$navbar-responsive-item-font-weight: normal;
+$navbar-responsive-item-text-decoration: none;
+$navbar-responsive-item-link-color: $navbar-item-font-color;
+$navbar-responsive-item-hover-link-color: var(--black);
+$navbar-responsive-item-background-color: transparent;
+$navbar-responsive-item-hover-background-color: var(--light);
+$navbar-responsive-item-padding-x: $base-space-size * 1.5;
+$navbar-responsive-item-padding-y: $base-space-size;
+
+$navbar-responsive-dropdown-menu-padding-y: $base-space-size;
+$navbar-responsive-dropdown-menu-font-color: var(--white);
+$navbar-responsive-dropdown-menu-font-size: 16px;
+$navbar-responsive-dropdown-menu-font-weight: bold;
+$navbar-responsive-dropdown-menu-text-decoration: none;
+$navbar-responsive-dropdown-menu-background-color: var(--midtone);
+$navbar-responsive-dropdown-menu-hover-background-color: var(--dark);
+$navbar-responsive-dropdown-menu-item-padding-x: $base-space-size * 2;
+$navbar-responsive-dropdown-menu-item-padding-y: $base-space-size;
+
+
+$navbar-burger-width: 25px;
+$navbar-burger-height: 45px;
+$navbar-burger-bar-height: 2px;
+$navbar-burger-bar-margin: 5px;
+$navbar-burger-bar-color: black;
+$navbar-burger-bar-border-radius: 10px;
+
+
+
+// _*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*
+
+
