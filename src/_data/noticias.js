@@ -25,11 +25,13 @@ module.exports = async function () {
 		}
 	}`;
 	let responseCount = await axios.post(process.env.APIROCKET_URL, { query: queryCount}, config);
-	let records = responseCount.data.data.count;
+	let records = responseCount.data.data._countNoticias.count;
+	// let records = 5;
 
 	let query = `query MyQuery {
-		AllNoticias(page: 0, perPage: ${records}) {
+		AllNoticias(page: 0, perPage: ${records}, orderBy: FECHA_DESC, filter: {titulo: {neq: ""}}) {
 			id
+			titulo
 		}
 	}`;
 
@@ -39,8 +41,10 @@ module.exports = async function () {
 		config
 	).then(function(response) {
 		console.log(response.data.errors);
-		return response.data.data.AllNoticias.map(function (value) {
+		return response.data.data.AllNoticias.map(function (value, index) {
 			// value.permaLink = `/posts/${slugify(value.titulo, { lower: true })}`;
+			value.index = index;
+			value.url = `${value.titulo} ${value.index}`;
 			return value;
 		});
 	}).catch(function(error) {
