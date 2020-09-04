@@ -24,14 +24,21 @@ module.exports = async function () {
 			count
 		}
 	}`;
-	let responseCount = await axios.post(process.env.APIROCKET_URL, { query: queryCount}, config);
-	let records = responseCount.data.data._countNoticias.count;
-	// let records = 5;
+
+	let records = 5;
+	if (process.env.ELEVENTY_ENV != 'development') {
+		let responseCount = await axios.post(process.env.APIROCKET_URL, { query: queryCount}, config);
+		records = responseCount.data.data._countNoticias.count;
+	}
 
 	let query = `query MyQuery {
 		AllNoticias(page: 0, perPage: ${records}, orderBy: FECHA_DESC, filter: {titulo: {neq: ""}}) {
 			id
 			titulo
+			texto
+			foto { url }
+			entradilla
+			entradillaCorta
 		}
 	}`;
 
